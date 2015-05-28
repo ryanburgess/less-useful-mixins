@@ -1,0 +1,13 @@
+// ----------------------------------------------------------------------
+
+  // Hover and Focus
+
+ // ----------------------------------------------------------------------
+
+ // example .hover-focus('text-decoration', 'none');
+
+.hover-focus(@property, @value) {
+  &:hover, &:focus {
+    @property: @value;
+  }
+}

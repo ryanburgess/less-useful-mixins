@@ -1,0 +1,36 @@
+// ----------------------------------------------------------------------
+
+  // Triangles
+
+ // ----------------------------------------------------------------------
+
+ // example: .triangle("left", #cccccc, 10);
+
+.triangle(@direction, @color, @size) {
+  @pxSize: @size + px;
+
+  width: 0;
+  height: 0;
+
+  & when (@direction = left) {
+    border-top: @pxSize solid transparent;
+    border-right: @pxSize solid @color;
+    border-bottom: @pxSize solid transparent;
+  }
+  & when (@direction = right) {
+    border-top: @pxSize solid transparent;
+    border-bottom: @pxSize solid transparent;
+    border-left: @pxSize solid @color;
+  }
+  & when (@direction = top) {
+    border-left: @pxSize solid transparent;
+    border-right: @pxSize solid transparent;
+    border-bottom: @pxSize solid @color;
+  }
+  & when (@direction = bottom) {
+    border-left: @pxSize solid transparent;
+    border-right: @pxSize solid transparent;
+    border-top: @pxSize solid @color;
+  }
+
+}

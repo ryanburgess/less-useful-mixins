@@ -1,0 +1,13 @@
+// ----------------------------------------------------------------------
+
+  // Opacity
+
+// ----------------------------------------------------------------------
+
+// example: .opacity(0.8);
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: alpha(opacity=@opacity-ie); //IE8
+}

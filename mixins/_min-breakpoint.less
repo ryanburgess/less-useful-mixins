@@ -1,0 +1,11 @@
+// ----------------------------------------------------------------------
+
+  // Media Query Breakpoints
+
+// ----------------------------------------------------------------------
+
+// example .min-breakpoint(940, width:80%);
+
+.min-breakpoint(@size, @content) {
+  @media only screen and (min-width: @size + px) { @content(); }
+}

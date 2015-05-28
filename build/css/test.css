@@ -1,0 +1,20 @@
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.rounded {
+  border-radius: 10;
+  -moz-border-radius: 10;
+  -webkit-border-radius: 10;
+}

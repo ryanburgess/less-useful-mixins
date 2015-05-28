@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+var mkdirp    = require('mkdirp'),
+  fs          = require('fs-extra'),
+  path        = require('path'),
+  pkg         = require('../package.json'),
+  version     = pkg.version,
+  dir         = path.dirname();
+
+// copy the mixins directory and create a new mixins directory
+fs.copy(path.join(__dirname, '../mixins'), dir + '/mixins', function(err) {
+  if (err) {
+    return console.log(err);
+  }
+});
+
+// create mixins
+fs.readFile(path.join(__dirname, '../_mixins.less'), 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  write(dir + '/_mixins.less', data);
+});
+
+function write(path, str, mode) {
+  fs.writeFileSync(path, str, { mode: mode || 0666 });
+  console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+}
+
+function mkdir(path, fn) {
+  mkdirp(path, 0755, function(err){
+    if (err) throw err;
+    console.log('   \033[36mcreate\033[0m : ' + path);
+    fn && fn();
+  });
+}
+console.log('LESS Useful Mixins ' + version);

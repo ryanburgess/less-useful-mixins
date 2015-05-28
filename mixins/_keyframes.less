@@ -1,0 +1,12 @@
+// ----------------------------------------------------------------------
+
+  // Keyframes
+
+// ----------------------------------------------------------------------
+
+// example: .keyframes(slide-down, {opacity:1; },{ opacity:0; });
+
+.keyframes (@name, @fromRules, @toRules) {
+    @-webkit-keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+            @keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+}
