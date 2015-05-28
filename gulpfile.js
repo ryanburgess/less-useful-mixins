@@ -8,7 +8,7 @@ gulp.task('less', function () {
     .pipe(less({
       paths: [ path.join(__dirname, 'mixins') ]
     }))
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./build/css'))
     .pipe(notify({ message: 'CSS complete' }));
 });
 
