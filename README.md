@@ -9,6 +9,7 @@ If you're using LESS you should find these mixins really helpful. These mixins s
 Run ```less-mixins``` in a directory where you'd like to use the LESS Useful Mixins.
 
 ## Release History
+* 1.0.2: Update translate mixin.
 * 1.0.1: Fix CL script.
 * 1.0.0: Initial release.
 
